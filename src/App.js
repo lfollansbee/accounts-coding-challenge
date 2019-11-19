@@ -1,25 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import AccountsPage from './components/AccountsPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <article className="grid">
+      <header className="grid">
+        <div className="title-container">
+          <h1>Coding Test</h1>
+        </div>
       </header>
-    </div>
+      <AccountsPage />
+      <footer className="grid">
+        <p className="copy">&copy;<script>document.write(new Date().getFullYear())</script></p>
+      </footer>
+    </article>
   );
 }
 
