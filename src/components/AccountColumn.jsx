@@ -1,6 +1,7 @@
 import React from 'react';
 import AccountDataList from './AccountDataList';
 
+// I broke this out into it's own component because the three columns had identical functionality, just received different data.
 class AccountColumn extends React.Component {
   constructor(props) {
     super(props);

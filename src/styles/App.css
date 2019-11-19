@@ -1,27 +1,7 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #09d3ac;
-}
-
-
+/* I was able to fix the footer issue to prevent it from covering up content.
+With more time, I would like to convert the css to scss and work to 
+make the application more reponsive. I'm not very familiar with CSS Grids and
+was worried making it responsive would take more time than I had. */
 article {
   height: 100%;
   grid-template-columns:1fr;
@@ -51,6 +31,7 @@ h3 {
   color:#006643;
 }
 main {
+  margin-bottom: 150px;
   grid-area: main;
 }
 footer {

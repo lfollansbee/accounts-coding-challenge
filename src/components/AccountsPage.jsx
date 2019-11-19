@@ -23,6 +23,7 @@ class AccountsPage extends React.Component {
         if (res.length === 0) this.setState({ errorMessage: 'No accounts available at this time.' });
         return this.organizeAccounts(res);
       }).catch(err => {
+        // TODO: better error handling for this call
         this.setState({ errorMessage: err })
       })
   }
@@ -41,25 +42,25 @@ class AccountsPage extends React.Component {
 
   render() {
     return (
-      <main className="content grid" id="home-content">
-        <div className="content-title-container">
+      <main className='content grid' id='home-content'>
+        <div className='content-title-container'>
           <h2>Accounts</h2>
         </div>
-        <section className="grid" id="account-grid">
+        <section className='grid' id='account-grid'>
           <AccountColumn
             accounts={this.state.activeAccounts}
-            classProp={"active"}
-            headerText={"Active"}
+            classProp={'active'}
+            headerText={'Active'}
           />
           <AccountColumn
             accounts={this.state.overdueAccounts}
-            classProp={"overdue"}
-            headerText={"Overdue"}
+            classProp={'overdue'}
+            headerText={'Overdue'}
           />
           <AccountColumn
             accounts={this.state.inactiveAccounts}
-            classProp={"inactive"}
-            headerText={"Inactive"}
+            classProp={'inactive'}
+            headerText={'Inactive'}
           />
         </section>
       </main>

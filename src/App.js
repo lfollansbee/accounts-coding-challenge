@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './styles/App.css';
 import AccountsPage from './components/AccountsPage';
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
       </header>
       <AccountsPage />
       <footer className="grid">
-        <p className="copy">&copy;<script>document.write(new Date().getFullYear())</script></p>
+        <p className="copy">&copy; {new Date().getFullYear()}</p>
       </footer>
     </article>
   );

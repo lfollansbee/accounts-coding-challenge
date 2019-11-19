@@ -2,11 +2,8 @@ import React from 'react';
 import Moment from 'react-moment';
 import { currencyFormatter, phoneNumberFormatter } from '../utils/formatters';
 
+// AccountDataList is a separate component because I imagine it could have more functionality in the future, i.e. links to more account info
 class AccountDataList extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { account } = this.props;
     return (
