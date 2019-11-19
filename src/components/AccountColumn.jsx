@@ -1,4 +1,5 @@
 import React from 'react';
+import AccountDataList from './AccountDataList';
 
 class AccountColumn extends React.Component {
   constructor(props) {
@@ -19,13 +20,12 @@ class AccountColumn extends React.Component {
           <h3>{headerText}</h3>
         </div>
         <div className={`account-container ${classProp}-account`}>
-          <ul className='account-data-list'>
-            {/* <li><label>Name:</label>{accounts[0].LastName}, {accounts[0].FirstName}</li>
-            <li><label>Email:</label>{accounts[0].Email}</li>
-            <li><label>Phone Number:</label>{accounts[0].PhoneNumber}</li>
-            <li><label>Amount Due:</label>{accounts[0].AmountDue}</li>
-            <li><label>Due Date:</label>{accounts[0].DueDate}</li> */}
-          </ul>
+          {accounts.length !== 0 ?
+            accounts.map((account, index) => (
+              <AccountDataList account={account} key={index} />
+            ))
+            : null
+          }
         </div>
       </section>
     )

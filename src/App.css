@@ -98,6 +98,7 @@ footer {
 }
 .account-data-list {
   list-style: none;
+  margin-bottom: 1.5em;
 }
 .account-data-list > li {
   margin: 10px 0;

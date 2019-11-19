@@ -21,10 +21,22 @@ class AccountsPage extends React.Component {
     AccountsService.fetchAccounts()
       .then(res => {
         if (res.length === 0) this.setState({ errorMessage: 'No accounts available at this time.' });
-        console.log(res)
+        return this.organizeAccounts(res);
       }).catch(err => {
         this.setState({ errorMessage: err })
       })
+  }
+
+  organizeAccounts = (accounts) => {
+    const active = accounts.filter(acct => acct.AccountStatusId === 0);
+    const overdue = accounts.filter(acct => acct.AccountStatusId === 1);
+    const inactive = accounts.filter(acct => acct.AccountStatusId === 2);
+
+    this.setState(() => ({
+      activeAccounts: active,
+      overdueAccounts: overdue,
+      inactiveAccounts: inactive,
+    }))
   }
 
   render() {
