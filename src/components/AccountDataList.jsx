@@ -1,6 +1,6 @@
 import React from 'react';
 import Moment from 'react-moment';
-import { phoneNumberFormatter } from '../utils/formatters';
+import { currencyFormatter, phoneNumberFormatter } from '../utils/formatters';
 
 class AccountDataList extends React.Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class AccountDataList extends React.Component {
         <li><label>Name:</label>{account.LastName}, {account.FirstName}</li>
         <li><label>Email:</label>{account.Email}</li>
         <li><label>Phone Number:</label>{phoneNumberFormatter(account.PhoneNumber)}</li>
-        <li><label>Amount Due:</label>{account.AmountDue}</li>
+        <li><label>Amount Due:</label>{currencyFormatter(account.AmountDue)}</li>
         {account.PaymentDueDate ?
           <li>
             <label>Due Date:</label>
